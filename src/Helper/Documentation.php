@@ -1,6 +1,6 @@
 <?php
 
-namespace Jonassiewertsen\Statamic\HowTo\Helper;
+namespace Jonassiewertsen\Documentation\Helper;
 
 use Illuminate\Support\Collection as LaravelCollection;
 use Statamic\Facades\Collection;

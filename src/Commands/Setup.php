@@ -1,10 +1,10 @@
 <?php
 
-namespace Jonassiewertsen\Statamic\HowTo\Commands;
+namespace Jonassiewertsen\Documentation\Commands;
 
 use Illuminate\Console\Command;
-use Jonassiewertsen\Statamic\HowTo\Helper\Documentation;
-use Jonassiewertsen\Statamic\HowTo\Helper\Video;
+use Jonassiewertsen\Documentation\Helper\Documentation;
+use Jonassiewertsen\Documentation\Helper\Video;
 use Statamic\Facades\Collection;
 use Statamic\Fields\Blueprint;
 use Statamic\Structures\CollectionStructure;

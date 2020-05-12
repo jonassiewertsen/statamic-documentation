@@ -1,5 +1,5 @@
 {
-  "name": "jonassiewertsen/statamic-documentatino",
+  "name": "jonassiewertsen/statamic-documentation",
   "description": "A Statamic Addon to save any kind of documentation inside your control panel",
   "keywords": [
     "Statamic",
@@ -12,7 +12,7 @@
   "type": "statamic-addon",
   "autoload": {
     "psr-4": {
-      "Jonassiewertsen\\Statamic\\HowTo\\": "src"
+      "Jonassiewertsen\\Documentation\\": "src"
     }
   },
   "authors": [
@@ -35,7 +35,7 @@
     },
     "laravel": {
       "providers": [
-        "Jonassiewertsen\\Statamic\\HowTo\\ServiceProvider"
+        "Jonassiewertsen\\Documentation\\ServiceProvider"
       ]
     }
   }

@@ -3,9 +3,9 @@
 namespace Jonassiewertsen\Documentation;
 
 use Illuminate\Support\Facades\Gate;
-use Jonassiewertsen\Statamic\HowTo\Commands\Setup;
-use Jonassiewertsen\Statamic\HowTo\Helper\Documentation;
-use Jonassiewertsen\Statamic\HowTo\Helper\Video;
+use Jonassiewertsen\Documentation\Commands\Setup;
+use Jonassiewertsen\Documentation\Helper\Documentation;
+use Jonassiewertsen\Documentation\Helper\Video;
 use Statamic\Facades\Collection;
 use Statamic\Facades\CP\Nav;
 use Statamic\Providers\AddonServiceProvider;

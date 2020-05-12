@@ -1,8 +1,8 @@
 <?php
 
-namespace Jonassiewertsen\Statamic\HowTo\Http\Controllers;
+namespace Jonassiewertsen\Documentation\Http\Controllers;
 
-use Jonassiewertsen\Statamic\HowTo\Helper\Documentation;
+use Jonassiewertsen\Documentation\Helper\Documentation;
 use Statamic\Facades\Entry;
 
 class DocumentationController {
