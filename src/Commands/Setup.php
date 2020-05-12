@@ -53,7 +53,7 @@ class Setup extends Command
         (new Blueprint)
             ->setHandle(Documentation::blueprintName())
             ->setContents([
-                'title'    => 'How to documentation',
+                'title'    => 'Documentation',
                 'sections' => [
                     'main'    => [
                         'fields' => [
@@ -91,7 +91,7 @@ class Setup extends Command
     {
         Collection::make(Documentation::collectionName())
             ->entryBlueprints(Documentation::collectionName())
-            ->title('How to documentation')
+            ->title('Documentation')
             ->structure((new CollectionStructure)->maxDepth(2))
             ->save();
     }
