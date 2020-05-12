@@ -31,7 +31,7 @@ class Documentation
 
         return collect($tree['children'])->map(function ($child) use ($nav, $tree) {
             return $nav->item(self::entryTitle($child['entry']))
-                       ->route('howToAddon.documentation.child.show', [
+                       ->route('documentation.child.show', [
                            'parent' => Documentation::entrySlug($tree['entry']),
                            'slug' => Documentation::entrySlug($child['entry'])
                         ]);

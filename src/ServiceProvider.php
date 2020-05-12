@@ -50,7 +50,7 @@ class ServiceProvider extends AddonServiceProvider
             if (Documentation::exists()) {
                 Documentation::tree()->map(function ($tree) use ($nav) {
                     return $nav->create(Documentation::entryTitle($tree['entry']))
-                               ->route('documentation.documentation.show', Documentation::entrySlug($tree['entry']))
+                               ->route('documentation.show', Documentation::entrySlug($tree['entry']))
                                ->icon('drawer-file')
                                ->section('Documentation')
                                ->children(Documentation::entryChildren($tree, $nav));

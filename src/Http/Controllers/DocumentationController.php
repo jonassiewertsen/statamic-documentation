@@ -9,12 +9,12 @@ class DocumentationController {
     public function show($slug) {
         $documentation = Entry::findBySlug($slug, Documentation::collectionName());
 
-        return view('howToAddon::documentation.show', compact('documentation'));
+        return view('documentation::cp.show', compact('documentation'));
     }
 
     public function showChild($parent, $slug) {
         $documentation = Entry::findBySlug($slug, Documentation::collectionName());
 
-        return view('howToAddon::documentation.show', compact('documentation'));
+        return view('documentation::cp.show', compact('documentation'));
     }
 }
