@@ -1,0 +1,42 @@
+{
+  "name": "jonassiewertsen/statamic-documentatino",
+  "description": "A Statamic Addon to save any kind of documentation inside your control panel",
+  "keywords": [
+    "Statamic",
+    "V3",
+    "Addon",
+    "Plugin",
+    "Documentation"
+  ],
+  "license": "proprietary",
+  "type": "statamic-addon",
+  "autoload": {
+    "psr-4": {
+      "Jonassiewertsen\\Statamic\\HowTo\\": "src"
+    }
+  },
+  "authors": [
+    {
+      "name": "Jonas Siewertsen"
+    }
+  ],
+  "support": {
+    "email": "mail@jonassiewertsen.com"
+  },
+  "require": {
+    "php": "^7.2",
+    "illuminate/support": "6.* || 7.*",
+    "statamic/cms": "3.*@beta"
+  },
+  "extra": {
+    "statamic": {
+      "name": "Documentation Addon",
+      "description": "A Statamic Addon to save any kind of documentation inside your control panel"
+    },
+    "laravel": {
+      "providers": [
+        "Jonassiewertsen\\Statamic\\HowTo\\ServiceProvider"
+      ]
+    }
+  }
+}
