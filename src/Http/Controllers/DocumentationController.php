@@ -10,8 +10,19 @@ class DocumentationController {
     public function show($slug) {
         $documentation = Entry::findBySlug($slug, Documentation::collectionName());
 
-        $bard = new Bard();
-        $documentation->content = $bard->augment($documentation->content);
+        $documentation->content = (new Bard())->augment($documentation->content);
+
+        $documentation->content = str_replace(
+            '<table',
+            '<div class="tableWrapper"><table',
+            $documentation->content
+        );
+
+        $documentation->content = str_replace(
+            'table>',
+            'table></div>',
+            $documentation->content
+        );
 
         return view('documentation::cp.show', compact('documentation'));
     }

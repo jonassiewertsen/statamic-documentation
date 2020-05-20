@@ -44,6 +44,7 @@ class Setup extends Command
     {
         $this->createCollections();
         $this->createBlueprints();
+        // TODO: vendor:publish the css file
 
         $this->info('Everything has been setup for you. Cheers!');
     }
