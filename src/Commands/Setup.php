@@ -4,7 +4,6 @@ namespace Jonassiewertsen\Documentation\Commands;
 
 use Illuminate\Console\Command;
 use Jonassiewertsen\Documentation\Helper\Documentation;
-use Jonassiewertsen\Documentation\Helper\Video;
 use Statamic\Facades\Collection;
 use Statamic\Fields\Blueprint;
 use Statamic\Structures\CollectionStructure;
