@@ -55,10 +55,10 @@ class Setup extends Command
             ->setContents([
                 'title'    => 'Documentation',
                 'sections' => [
-                    'main'    => [
+                    'main' => [
                         'fields' => [
                             ['handle' => 'content', 'field' => [
-                                'buttons' => [
+                                'buttons'         => [
                                     'h2',
                                     'h3',
                                     'bold',
@@ -84,19 +84,79 @@ class Setup extends Command
                                 'localizable'     => false,
                                 'listable'        => 'hidden',
                                 'display'         => 'Content',
-                            ]],
-                        ],
+                                'sets'            => [
+                                    'video' => [
+                                        'display' => 'Video',
+                                        'fields'  => [
+                                            [
+                                                'handle' => 'video_type',
+                                                'field'  => [
+                                                    'options'     => [
+                                                        'self'    => 'Self hosted',
+                                                        'vimeo'   => 'Vimeo',
+                                                        'youtube' => 'YouTube',
+                                                    ],
+                                                    'type'        => 'button_group',
+                                                    'default'     => 'self',
+                                                    'localizable' => 'false',
+                                                    'listable'    => 'hidden',
+                                                    'display'     => 'Video Type',
+                                                ],
+                                            ],
+                                            [
+                                                'handle' => 'video',
+                                                'field'  => [
+                                                    'mode'          => 'grid',
+                                                    'restrict'      => 'false',
+                                                    'allow_uploads' => 'true',
+                                                    'max_files'     => 1,
+                                                    'type'          => 'assets',
+                                                    'localizable'   => false,
+                                                    'listable'      => 'hidden',
+                                                    'display'       => 'Video',
+                                                    'if'            => [
+                                                        'video_type' => 'equals self',
+                                                    ],
+                                                ],
+                                            ],
+                                            [
+                                                'handle' => 'url',
+                                                'field'  => [
+                                                    'type'        => 'video',
+                                                    'localizable' => false,
+                                                    'listable'    => 'hidden',
+                                                    'display'     => 'Video',
+                                                    'if'          => [
+                                                        'video_type' => 'not self',
+                                                    ],
+                                                ],
+                                            ],
+                                            [
+                                                'handle' => 'description',
+                                                'field'  => [
+                                                    'input_type'  => 'text',
+                                                    'type'        => 'text',
+                                                    'localizable' => false,
+                                                    'listable'    => 'hidden',
+                                                    'display'     => 'Description',
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ]],
                     ],
-                    'sidebar' => [
-                        'fields' => [
-                            ['handle' => 'slug', 'field' => [
-                                'type'        => 'slug',
-                                'localizable' => false,
-                                'listable'    => 'hidden',
-                                'display'     => 'Slug',
-                                'validate'    => 'required',
-                            ]],
-                        ],
+                ],
+                'sidebar'  => [
+                    'fields' => [
+                        ['handle' => 'slug', 'field' => [
+                            'type'        => 'slug',
+                            'localizable' => false,
+                            'listable'    => 'hidden',
+                            'display'     => 'Slug',
+                            'validate'    => 'required',
+                        ]],
                     ],
                 ],
             ])->save();
