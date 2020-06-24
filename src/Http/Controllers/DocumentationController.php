@@ -7,16 +7,19 @@ use Statamic\Facades\Entry;
 
 class DocumentationController {
     public function show($slug) {
-        $documentation = Entry::findBySlug($slug, Documentation::collectionName());
-
         return view('documentation::cp.show',[
-            'documentation' => $documentation->toAugmentedArray(['title', 'content'])
+            'documentation' => $this->getEntry($slug),
         ]);
     }
 
     public function showChild($parent, $slug) {
-        $documentation = Entry::findBySlug($slug, Documentation::collectionName());
+        return view('documentation::cp.show',[
+            'documentation' => $this->getEntry($slug),
+        ]);
+    }
 
-        return view('documentation::cp.show', compact('documentation'));
+    private function getEntry($slug) {
+        $documentation = Entry::findBySlug($slug, Documentation::collectionName());
+        return $documentation->toAugmentedArray(['title', 'content']);
     }
 }
