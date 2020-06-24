@@ -17,36 +17,9 @@
                             {!! $format->text($set['text']) !!}
                             @break
                         @case ('video')
-                            @switch($set['video_type'])
-                                @case('self')
-                                    <figure class="mt-3">
-                                        <video width="100%" height="400" controls>
-                                            <source src="{{ $set['video'] }}">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                        @if ($set['description'])
-                                            <figcaption class="text-sm text-grey-70 text-right">{{ $set['description'] }}</figcaption>
-                                        @endif
-                                    </figure>
-                                    @break
-                                @case('vimeo')
-                                    <figure class="mt-3">
-                                        <iframe src="{{ $modify($set['url'])->embedUrl() }}" width="100%" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                                        @if ($set['description'])
-                                            <figcaption class="mt-1 text-sm  text-grey-70 text-right">{{ $set['description'] }}</figcaption>
-                                        @endif
-                                    </figure>
-                                    @break
-                                @case('youtube')
-                                    <figure class="mt-3">
-                                        <iframe width="100%" height="400" src="{{ $modify($set['url'])->embedUrl() }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                                        @if ($set['description'])
-                                            <figcaption class="mt-1 text-sm  text-grey-70 text-right">{{ $set['description'] }}</figcaption>
-                                        @endif
-                                    </figure>
-                                    @break
-                                @endswitch
+                            @include('documentation::cp.partials.video_set')
                             @break
-                        @endswitch
+                    @endswitch
                 @endforeach
 
             </div>
