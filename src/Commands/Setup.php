@@ -22,7 +22,7 @@ class Setup extends Command
      *
      * @var string
      */
-    protected $description = 'Setup Collections for the Documentation addon';
+    protected $description = 'Setup Collection for the Documentation addon';
 
     /**
      * Create a new command instance.
@@ -43,7 +43,6 @@ class Setup extends Command
     {
         $this->createCollections();
         $this->createBlueprints();
-        // TODO: vendor:publish the css file
 
         $this->info('Everything has been setup for you. Cheers!');
     }
