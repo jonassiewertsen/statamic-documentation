@@ -4,6 +4,15 @@
 
 A Statamic V3 Addon to save any kind of documentation inside your control panel.
 
+## Features
+- [x] Documentation available in the control panel
+- [x] Menu structure with children (max depth 2)
+- [x] Flexible text editing with bard editor
+- [x] Elements: Title, H2, H3, bold, italic, underlinded, ordered- and unordered lists, tables, blockuotes and links
+- [x] Videos can be embedded: Self hosted, from YouTube or Vimeo
+- [x] Optional video description
+- [ ] Permissions (not added yet)
+
 ## Installation
 ### Step 1
 Pull in your package with composer
@@ -22,6 +31,11 @@ Create your first documentation page inside the control panel.
 
 Documentation -> Manage -> Create Entry
 Write something useful and save it. 
+
+# Requirements
+- Statamic V3
+- Laravel 7
+- min. PHP 7.2
 
 # License 
 
