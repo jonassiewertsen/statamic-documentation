@@ -4,16 +4,11 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | General Language Lines
+    | General addon translations
     |--------------------------------------------------------------------------
-    |
-    | Those are general language lines, like the addon footer.
     |
     */
 
-    'back' => 'zurück',
-    'footer' => [
-        'createdBy' => 'Addon erstellt von',
-    ]
-
+    'documentation' => 'Dokumentation',
+    'manage'        => 'Verwalten',
 ];

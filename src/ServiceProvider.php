@@ -5,7 +5,6 @@ namespace Jonassiewertsen\Documentation;
 use Illuminate\Support\Facades\Gate;
 use Jonassiewertsen\Documentation\Commands\Setup;
 use Jonassiewertsen\Documentation\Helper\Documentation;
-use Jonassiewertsen\Documentation\Helper\Video;
 use Statamic\Facades\Collection;
 use Statamic\Facades\CP\Nav;
 use Statamic\Providers\AddonServiceProvider;
@@ -52,16 +51,16 @@ class ServiceProvider extends AddonServiceProvider
                     return $nav->create(Documentation::entryTitle($tree['entry']))
                                ->route('documentation.show', Documentation::entrySlug($tree['entry']))
                                ->icon('drawer-file')
-                               ->section('Documentation')
+                               ->section(__('documentation::general.documentation'))
                                ->children(Documentation::entryChildren($tree, $nav));
                 });
             }
 
             // Only show the Manage button, if the permissions have been set
             if (Gate::allows('edit', Collection::findByHandle(Documentation::collectionName()))) {
-                $nav->create(__('documentation::menu.manage'))
+                $nav->create(__('documentation::general.manage'))
                     ->icon('settings-slider')
-                    ->section('Documentation')
+                    ->section(__('documentation::general.documentation'))
                     ->route('collections.show', [
                         'collection' => Documentation::collectionName(),
                     ]);
