@@ -1,6 +1,6 @@
 # Statamic Documentation - Monitor your Website
 ![Statamic 3.0+](https://img.shields.io/badge/Statamic-3.0+-FF269E?style=for-the-badge&link=https://statamic.com)
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/jonassiewertsen/statamic-oh-dear.svg?style=for-the-badge)](https://packagist.org/packages/jonassiewertsen/statamic-oh-dear)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/jonassiewertsen/statamic-documentation.svg?style=for-the-badge)](https://packagist.org/packages/jonassiewertsen/statamic-documentation)
 
 A Statamic V3 Addon to save any kind of documentation inside your control panel.
 
