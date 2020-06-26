@@ -9,7 +9,6 @@
     "Documentation"
   ],
   "license": "proprietary",
-  "type": "statamic-addon",
   "autoload": {
     "psr-4": {
       "Jonassiewertsen\\Documentation\\": "src"
@@ -25,7 +24,7 @@
   },
   "require": {
     "php": "^7.2",
-    "illuminate/support": "6.* || 7.*",
+    "illuminate/support": "7.*",
     "statamic/cms": "3.*@beta"
   },
   "extra": {
