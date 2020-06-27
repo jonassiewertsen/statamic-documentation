@@ -13,6 +13,10 @@ A Statamic V3 Addon to save any kind of documentation inside your control panel.
 - [x] Optional video description
 - [ ] Permissions (not added yet)
 
+# Looking for less?
+Would it be enough to list videos only? Check out my "How To" Addon:
+[How To Addon](https://statamic.com/marketplace/addons/how-to-addon)
+
 ## Installation
 ### Step 1
 Pull in your package with composer
