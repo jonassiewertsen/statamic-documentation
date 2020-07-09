@@ -43,6 +43,6 @@ Write something useful and save it.
 
 # License 
 
-Before going into productions with *Statamic Documentation*, you need to buy a license at the [Statamic Marketplace](https://statamic.com/marketplace/addons/oh-dear). 
+Before going into productions with *Statamic Documentation*, you need to buy a license at the [Statamic Marketplace](https://statamic.com/addons/jonassiewertsen/documentation). 
 
 *Statamic Documentation* is not free software. 
