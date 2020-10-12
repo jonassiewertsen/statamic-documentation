@@ -23,7 +23,7 @@
     "email": "mail@jonassiewertsen.com"
   },
   "require": {
-    "php": "^7.2.5",
+    "php": "^7.3",
     "illuminate/support": "^7.0 || ^8.0",
     "statamic/cms": "3.0.*"
   },
