@@ -1,0 +1,7 @@
+title: Documentation
+blueprints: documentation
+revisions: false
+structure:
+  root: false
+  max_depth: 2
+  tree: {}

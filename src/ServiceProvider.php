@@ -2,12 +2,13 @@
 
 namespace Jonassiewertsen\Documentation;
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Gate;
-use Jonassiewertsen\Documentation\Commands\Setup;
 use Jonassiewertsen\Documentation\Helper\Documentation;
 use Statamic\Facades\Collection;
 use Statamic\Facades\CP\Nav;
 use Statamic\Providers\AddonServiceProvider;
+use Statamic\Statamic;
 
 class ServiceProvider extends AddonServiceProvider
 {
@@ -15,11 +16,7 @@ class ServiceProvider extends AddonServiceProvider
         'cp' => __DIR__ . '/routes/cp.php',
     ];
 
-    protected $commands = [
-        Setup::class,
-    ];
-
-    protected $widgets = [];
+    protected $publishAfterInstall = false;
 
     public function boot()
     {
@@ -29,17 +26,37 @@ class ServiceProvider extends AddonServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'documentation');
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'documentation');
 
+        $this->createNavigation();
+        $this->publishAssets();
+
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../resources/lang' => resource_path('lang/vendor/documentation/'),
-            ], 'Documentation Addon lang file');
+            ], 'documentation-lang');
 
             $this->publishes([
                 __DIR__ . '/../config/config.php' => config_path('documentation.php'),
-            ], 'Documentation Addon config file');
-        }
+            ], 'documentation-config');
 
-        $this->createNavigation();
+            // Blueprints
+            $this->publishes([
+                __DIR__ . '/../resources/blueprints' => resource_path('blueprints'),
+            ], 'documentation-blueprints');
+
+            // Collections
+            $this->publishes([
+                __DIR__ . '/../resources/collections' => base_path('content/collections'),
+            ], 'documentation-collections');
+        }
+    }
+
+    private function publishAssets(): void
+    {
+        Statamic::afterInstalled(function () {
+            Artisan::call('vendor:publish --tag=documentation-config');
+            Artisan::call('vendor:publish --tag=documentation-blueprints');
+            Artisan::call('vendor:publish --tag=documentation-collections');
+        });
     }
 
     private function createNavigation(): void
@@ -66,12 +83,5 @@ class ServiceProvider extends AddonServiceProvider
                     ]);
             }
         });
-    }
-
-    private function loadCommands(array $commands)
-    {
-        if ($this->app->runningInConsole()) {
-            $this->commands($commands);
-        }
     }
 }
