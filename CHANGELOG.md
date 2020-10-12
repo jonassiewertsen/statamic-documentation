@@ -1,4 +1,9 @@
 # Release Notes
+## v1.2.1
+- Laravel 8 support added
+- Installation will run automatically
+- Updated to be useable with the latest Statamic version
+
 ## v1.1.1
 
 ### Fixed

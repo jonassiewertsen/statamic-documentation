@@ -24,13 +24,9 @@ Pull in your package with composer
 composer require jonassiewertsen/statamic-documentation
 ```
 
-### Step 2
-Run the install command to setup blueprint and collection.
-```bash
-php artisan documentation:setup
-```
+### Step 2 - Enjoy
 
-### Step 3
+
 Create your first documentation page inside the control panel. 
 
 Documentation -> Manage -> Create Entry
@@ -38,8 +34,8 @@ Write something useful and save it.
 
 # Requirements
 - Statamic V3
-- Laravel 7
-- min. PHP 7.2
+- Laravel 7 or 8
+- min. PHP 7.3
 
 # License 
 
