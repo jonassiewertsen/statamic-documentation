@@ -8,7 +8,7 @@ A Statamic V3 Addon to save any kind of documentation inside your control panel.
 - [x] Documentation available in the control panel
 - [x] Menu structure with children (max depth 2)
 - [x] Flexible text editing with bard editor
-- [x] Elements: Title, H2, H3, bold, italic, underlinded, ordered- and unordered lists, tables, blockuotes and links
+- [x] Elements: Title, H2, H3, bold, italic, underlinded, ordered- and unordered lists, tables, blockquotes and links
 - [x] Videos can be embedded: Self hosted, from YouTube or Vimeo
 - [x] Optional video description
 - [ ] Permissions (not added yet)
