@@ -42,8 +42,8 @@ COMPOSER_MEMORY_LIMIT=-1 composer require jonassiewertsen/statamic-documentation
 
 # Requirements
 - Statamic V3
-- Laravel 7 or 8
-- min. PHP 7.3
+- Laravel 7 || 8 || 9 || 10
+- PHP >= 7.3 || 8.0
 
 # License 
 
