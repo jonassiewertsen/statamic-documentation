@@ -3,7 +3,6 @@
   "description": "A Statamic Addon to save any kind of documentation inside your control panel",
   "keywords": [
     "Statamic",
-    "V3",
     "Addon",
     "Plugin",
     "Documentation"
@@ -25,7 +24,7 @@
   "require": {
     "php": "^7.3 || ^8.0",
     "illuminate/support": "^7.0 || ^8.0 || ^9.0 || ^10.0",
-    "statamic/cms": "3.0.* || 3.1.* || 3.2.* || 3.3.* || 3.4.*"
+    "statamic/cms": "^3.0 || ^4.0"
   },
   "extra": {
     "statamic": {

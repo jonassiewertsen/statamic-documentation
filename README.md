@@ -22,22 +22,14 @@ composer require jonassiewertsen/statamic-documentation
 
 ### Step 2 - Enjoy
 
-
 Create your first documentation page inside the control panel. 
 
 Documentation -> Manage -> Create Entry
 Write something useful and save it. 
 
-## Troubeshooting
-### PHP Fatal error:  Allowed memory size error?
-Bypass the memory limit for composer to avoid this error:
-```bash
-COMPOSER_MEMORY_LIMIT=-1 composer require jonassiewertsen/statamic-documentation
-```
-
 
 # Requirements
-- Statamic V3
+- Statamic 3 || 4
 - Laravel 7 || 8 || 9 || 10
 - PHP >= 7.3 || 8.0
 
