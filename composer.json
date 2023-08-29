@@ -22,8 +22,8 @@
     "email": "mail@jonassiewertsen.com"
   },
   "require": {
-    "php": "^7.3 || ^8.0",
-    "illuminate/support": "^7.0 || ^8.0 || ^9.0 || ^10.0",
+    "php": "^8.1",
+    "illuminate/support": "^9.0 || ^10.0",
     "statamic/cms": "^3.0 || ^4.0"
   },
   "extra": {
