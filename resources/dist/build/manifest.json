@@ -1,0 +1,12 @@
+{
+  "resources/css/cp.scss": {
+    "file": "assets/cp-a0098390.css",
+    "isEntry": true,
+    "src": "resources/css/cp.scss"
+  },
+  "resources/js/index.ts": {
+    "file": "assets/index-4ed993c7.js",
+    "isEntry": true,
+    "src": "resources/js/index.ts"
+  }
+}
