@@ -28,7 +28,7 @@ class DocumentationController {
      * Fetching an entry by slug
      */
     private function getEntry($slug) {
-        $documentation = Entry::findBySlug($slug, Documentation::collectionName());
+        $documentation = Entry::query()->where('slug', $slug)->where('collection', Documentation::collectionName())->first();
         return $documentation->toAugmentedArray(['title', 'content']);
     }
 }

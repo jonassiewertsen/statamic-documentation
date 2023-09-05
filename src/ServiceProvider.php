@@ -12,11 +12,18 @@ use Statamic\Statamic;
 
 class ServiceProvider extends AddonServiceProvider
 {
+    protected $vite = [
+        'input' => [
+            'resources/css/cp.scss'
+        ],
+        'publicDirectory' => 'resources/dist',
+    ];
+
     protected $routes = [
         'cp' => __DIR__ . '/routes/cp.php',
     ];
 
-    protected $publishAfterInstall = false;
+    // protected $publishAfterInstall = false;
 
     public function boot()
     {
