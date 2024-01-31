@@ -27,15 +27,6 @@ class ServiceProvider extends AddonServiceProvider
 
     public function boot()
     {
-        parent::boot();
-
-        $this->loadViewsFrom(__DIR__ . '/../resources/views/', 'documentation');
-        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'documentation');
-        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'documentation');
-
-        $this->createNavigation();
-        $this->publishAssets();
-
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../resources/lang' => resource_path('lang/vendor/documentation/'),
@@ -55,6 +46,24 @@ class ServiceProvider extends AddonServiceProvider
                 __DIR__ . '/../resources/collections' => base_path('content/collections'),
             ], 'documentation-collections');
         }
+
+        // Only boot everything, if we detect a cp route.
+        // Otherwise me might boot the navigation, which is not needed.
+        $currentRoute = $this->app->request->getRequestUri();
+        $cpRoute = '/'.config('statamic.cp.route').'/';
+
+        if (! Str::startsWith($currentRoute, $cpRoute)) {
+            return;
+        }
+        
+        parent::boot();
+
+        $this->loadViewsFrom(__DIR__ . '/../resources/views/', 'documentation');
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'documentation');
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'documentation');
+
+        $this->createNavigation();
+        $this->publishAssets();
     }
 
     private function publishAssets(): void
