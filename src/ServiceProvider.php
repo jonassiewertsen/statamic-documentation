@@ -4,6 +4,7 @@ namespace Jonassiewertsen\Documentation;
 
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Str;
 use Jonassiewertsen\Documentation\Helper\Documentation;
 use Statamic\Facades\Collection;
 use Statamic\Facades\CP\Nav;
