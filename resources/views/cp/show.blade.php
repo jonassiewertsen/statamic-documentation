@@ -10,7 +10,7 @@
 
     <section class="card px-16 py-8">
         <article class="bard-fieldtype">
-            <div class="ProseMirror">
+            <div class="ProseMirror bard-content">
 
                 @foreach ($documentation['content'] as $set)
                     @switch($set['type'])
