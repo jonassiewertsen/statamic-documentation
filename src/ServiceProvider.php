@@ -13,18 +13,9 @@ use Statamic\Statamic;
 
 class ServiceProvider extends AddonServiceProvider
 {
-    protected $vite = [
-        'input' => [
-            'resources/css/cp.scss'
-        ],
-        'publicDirectory' => 'resources/dist',
-    ];
-
     protected $routes = [
         'cp' => __DIR__ . '/routes/cp.php',
     ];
-
-    // protected $publishAfterInstall = false;
 
     public function boot()
     {
@@ -49,14 +40,14 @@ class ServiceProvider extends AddonServiceProvider
         }
 
         // Only boot everything, if we detect a cp route.
-        // Otherwise me might boot the navigation, which is not needed.
+        // Otherwise, me might boot the navigation, which is not needed.
         $currentRoute = $this->app->request->getRequestUri();
         $cpRoute = '/'.config('statamic.cp.route').'/';
 
         if (! Str::startsWith($currentRoute, $cpRoute)) {
             return;
         }
-        
+
         parent::boot();
 
         $this->loadViewsFrom(__DIR__ . '/../resources/views/', 'documentation');
