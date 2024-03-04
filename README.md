@@ -20,13 +20,19 @@ Pull in your package with composer
 composer require jonassiewertsen/statamic-documentation
 ```
 
-### Step 2 - Enjoy
+### Step 2
+Publish the config, collections and blueprint files:
+```bash
+    php artisan vendor:publish --provider="Jonassiewertsen\Documentation\ServiceProvider"
+```
+
+### Step 3 - Enjoy
 
 Create your first documentation page inside the control panel. 
 
-Documentation -> Manage -> Create Entry
-Write something useful and save it. 
+Documentation -> Manage -> Create Entry 
 
+Write something useful and save it.
 
 # Requirements
 - Statamic 3 || 4
