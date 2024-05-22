@@ -35,8 +35,8 @@ Documentation -> Manage -> Create Entry
 Write something useful and save it.
 
 # Requirements
-- Statamic 3 || 4
-- Laravel 9 || 10
+- Statamic 4 || 5
+- Laravel 10 || 11
 - PHP >= 8.1
 
 # License 
